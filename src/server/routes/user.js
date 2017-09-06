@@ -43,9 +43,7 @@ router.get('/signout', (request, response) => {
   request.session.userid = null
   request.session.username = null
   request.session.role = null
-  response.status(200).render('users/login', {
-    message: `Thanks for coming ${signedOutUser}!`
-  })
+  response.status(200).render('users/login', {message: `Thanks for coming ${signedOutUser}!`})
 })
 
 router.use((error, request, response, next) => {
