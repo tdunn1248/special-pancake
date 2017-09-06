@@ -23,12 +23,12 @@ const updateTitle = (id, title) => {
   return DBbook.updateTitle(id, title)
 }
 
-const updateAuthor = (id, title) => {
-  return DBbook.updateAuthor(id, title)
+const updateAuthor = (id, author) => {
+  return DBbook.updateAuthor(id, author)
 }
 
-const updateGenre = (id, title) => {
-  return DBbook.updateGenre(id, title)
+const updateGenre = (id, genre) => {
+  return DBbook.updateGenre(id, genre)
 }
 
 const deleteBook = (id) => {
