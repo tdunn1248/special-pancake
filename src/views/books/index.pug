@@ -1,0 +1,22 @@
+include ../partials/header
+
+h4 #{message}
+form.form-group.query-search(method='get' action='/books/search/:searchTerm')
+  input.form-control.query-field(type='text' id='query' name='searchTerm' placeholder='Search for Title, Author, Genre...')
+  input.btn.query-button(type='submit' value='Search') 
+.books-container  
+  for book in books
+    .column
+      .book-item 
+        a(href='/books/' + book.id)
+          .book-info
+            p Title:
+            p(value=book.id)= book.title
+          .book-info
+            p Author:
+            p(value=book.id)= book.author
+          .book-info
+            p Genre:
+            p(value=book.id)= book.genre
+
+include ../partials/footer  

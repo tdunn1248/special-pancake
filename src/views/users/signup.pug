@@ -1,0 +1,11 @@
+include ../partials/header
+
+.container 
+  .form-container 
+    h1 The Book Store
+    form.form-group(method='POST' action='/users/signup')
+      input.form-control(type='email', name='email' placeholder='Enter email...')
+      input.form-control(type='password', name='password' placeholder='Password')
+      input.form-control(type='password', name='confirmPassword' placeholder='Confirm Password')
+      button(type='submit' class='btn') Signup
+include ../partials/footer

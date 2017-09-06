@@ -1,0 +1,24 @@
+{
+  "name": "-y",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "db:create": "dropdb --if-exists weekend-bookstore && createdb weekend-bookstore",
+    "db:schema": "psql weekend-bookstore < ./src/models/database/schema.sql",
+    "db:insert": "psql weekend-bookstore < ./src/models/database/seed_data/load-data.sql",
+    "db:init": "npm run db:create && npm run db:schema && npm run db:insert",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "bcrypt": "^1.0.3",
+    "body-parser": "^1.17.2",
+    "dotenv": "^4.0.0",
+    "express-session": "^1.15.5",
+    "pg-promise": "^6.5.1",
+    "pug": "^2.0.0-rc.3"
+  }
+}

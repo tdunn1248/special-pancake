@@ -1,0 +1,17 @@
+header.header
+  a(href='/') Book Store
+  ul.nav.nav-pills.header-nav
+    if !user 
+      li.active(role='presentation')
+        a(href='/users/login') Login
+      li(role='presentation')
+        a(href='/users/signup') Signup
+    else 
+      li(role='presentation')
+        a(href='/users/signout') Signout
+hr
+
+if role 
+  .header.add-new-book-container
+    a(href='/books/add') Add a book
+else       

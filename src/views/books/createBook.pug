@@ -1,0 +1,15 @@
+include ../partials/header 
+
+
+
+.container.add-new
+  h2 Add a book to the collection
+  form.form-group(method='post' action='/books/add')
+    input.form-control(type='text' name='title' placeholder='Title')
+    input.form-control(type='text' name='author' placeholder='Author')
+    input.form-control(type='text' name='genre' placeholder='Genre')
+    input.btn(type='submit' value='Add it!') 
+  h4 #{message}
+
+
+include ../partials/footer
