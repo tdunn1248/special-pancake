@@ -1,6 +1,11 @@
-Random Bookstore
+# The Bookstore
 - Node, Express, Postgres, and Pug
 - Simple bookstore with CRUD operations
+
+
+
+
+
 
 - [X] Books have a title, author, and genre
 - [X] Users can add books into the bookstore system via an admin page (create)
