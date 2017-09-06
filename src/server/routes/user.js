@@ -7,7 +7,7 @@ router.route('/login')
   .post((request, response, next) => {
     user.info(request.body.email)
         .then(userInfo => {
-          return user.login(userInfo, request.body.password).then(valid => {
+          return user.login(request.body.password, userInfo).then(valid => {
             if (!valid) {next()}
             else {
               request.session.userid = userInfo[0].id
@@ -39,11 +39,11 @@ router.route('/signup')
 router.use(checkSession)
 
 router.get('/signout', (request, response) => {
-  let signedOutUser = request.session.username
+  let {username} = request.session.username
   request.session.userid = null
   request.session.username = null
   request.session.role = null
-  response.status(200).render('users/login', {message: `Thanks for coming ${signedOutUser}!`})
+  response.status(200).render('users/login', {message: `Thanks for coming ${username}!`})
 })
 
 router.use((error, request, response, next) => {
