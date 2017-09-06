@@ -3,9 +3,7 @@ const user = require('../../models/user')
 const {checkSession} = require('./middleware/session-helpers')
 
 router.route('/login')
-  .get((request, response) => {
-    response.status(200).render('users/login')
-  })
+  .get((request, response) => {response.status(200).render('users/login')})
   .post((request, response, next) => {
     user.info(request.body.email)
         .then(userInfo => {
@@ -23,9 +21,7 @@ router.route('/login')
 })
 
 router.route('/signup')
-  .get((request, response) => {
-    response.status(200).render('users/signup')
-  })
+  .get((request, response) => {response.status(200).render('users/signup')})
   .post((request, response, next) => {
     if(request.body.password !== request.body.confirmPassword) next(new Error("Passwords don't match"))
     else {

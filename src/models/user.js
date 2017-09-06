@@ -13,7 +13,7 @@ const signup = (user, password) => {
           })
 }
 
-const login = (user, plainpassword) => {
+const login = (plainpassword, user ) => {
   return confirmPassword(plainpassword, user[0].password)
 }
 
